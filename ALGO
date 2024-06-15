@@ -1,0 +1,51 @@
+1. Début
+2. Initialiser les compteurs : longueur = 0, mots = 0, voyelles = 0
+3. Initialiser un indicateur pour les espaces : dernier_caractere_espace = vrai
+4. Répéter pour chaque caractère de la phrase
+    a. Lire un caractère
+    b. Si le caractère est un point ('.'), alors
+        i. Sortir de la boucle
+    c. Sinon
+        i. Incrémenter le compteur longueur
+        ii. Si le caractère est une voyelle (a, e, i, o, u, A, E, I, O, U), alors
+            - Incrémenter le compteur voyelles
+        iii. Si le caractère est un espace (' '), alors
+            - Mettre à jour l'indicateur dernier_caractere_espace à vrai
+        iv. Sinon
+            - Si dernier_caractere_espace est vrai, alors
+                - Incrémenter le compteur mots
+                - Mettre à jour l'indicateur dernier_caractere_espace à faux
+5. Afficher les compteurs : longueur, mots, voyelles
+6. Fin
+
+
+------------------------------------------------------------------------------------------------
+
+Début
+    longueur <- 0
+    mots <- 0
+    voyelles <- 0
+    dernier_caractere_espace <- vrai
+
+    Tant que vrai
+        caractère <- lire un caractère de la phrase
+        
+        Si caractère == '.'
+            Sortir de la boucle
+        
+        longueur <- longueur + 1
+
+        Si caractère est une voyelle (a, e, i, o, u, A, E, I, O, U)
+            voyelles <- voyelles + 1
+
+        Si caractère == ' '
+            dernier_caractere_espace <- vrai
+        Sinon
+            Si dernier_caractere_espace == vrai
+                mots <- mots + 1
+                dernier_caractere_espace <- faux
+
+    Afficher "Longueur de la phrase : ", longueur
+    Afficher "Nombre de mots : ", mots
+    Afficher "Nombre de voyelles : ", voyelles
+Fin
